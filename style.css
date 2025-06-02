@@ -28,8 +28,8 @@ p {
 .glow {
   position: absolute;
   border-radius: 50%;
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
   background: radial-gradient(circle, var(--b3), transparent 60%);
   animation: pulse 5s ease-in-out infinite;
   filter: blur(50px);
@@ -89,24 +89,13 @@ p {
   }
 }
 
-.orbit {
-  position: absolute;
-  top: 38%;
-  left: 15%;
-  width: 235px;
-  height: 78px;
-  border: 0.5px solid var(--b2);
-  border-radius: 50%;
-  transform: rotate(10deg);
-}
-
 .orbit-right {
   position: absolute;
   top: -15%;
   right: -15%;
   width: 150px;
   height: 150px;
-  border: 1px solid var(--b3);
+  border: 0.5px solid var(--b3);
   border-radius: 50%;
 }
 
@@ -116,7 +105,7 @@ p {
   left: -15%;
   width: 150px;
   height: 150px;
-  border: 1px solid var(--b3);
+  border: 0.5px solid var(--b3);
   border-radius: 50%;
 }
 
@@ -134,7 +123,46 @@ p {
   font-size: 1rem;
 }
 
-.hero h1 {
+.hero button {
+  font-family: "Libre Baskerville", serif;
+  font-style: italic;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--b2);
+}
+
+.hero .fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.fade-up:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.fade-up:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.fade-up:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.fade-up:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero .something {
+  display: flex;
+  position: relative;
+}
+
+.something h1 {
   font-family: "Shrikhand", serif;
   text-align: center;
   color: var(--b2);
@@ -145,10 +173,13 @@ p {
   padding: 1rem 0;
 }
 
-.hero button {
-  font-family: "Libre Baskerville", serif;
-  font-style: italic;
-  padding: 0.5rem 1.5rem;
-  border-radius: 1rem;
-  background-color: var(--b2);
+.something .orbit {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 78px;
+  border: 0.5px solid var(--b2);
+  border-radius: 50%;
+  transform: rotate(10deg);
 }
