@@ -24,7 +24,6 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  overflow: hidden;
 }
 
 p {
@@ -32,7 +31,7 @@ p {
 }
 
 .glow {
-  position: absolute;
+  position: fixed;
   border-radius: 50%;
   width: 300px;
   height: 300px;
@@ -96,7 +95,7 @@ p {
 }
 
 .orbit-right {
-  position: absolute;
+  position: fixed;
   top: -15%;
   right: -15%;
   width: 150px;
@@ -106,7 +105,7 @@ p {
 }
 
 .orbit-left {
-  position: absolute;
+  position: fixed;
   bottom: -15%;
   left: -15%;
   width: 150px;
