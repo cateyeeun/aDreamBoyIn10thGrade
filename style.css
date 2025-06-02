@@ -16,15 +16,14 @@
 
 body {
   background-color: black;
-  overflow: hidden;
   color: white;
   font-family: "Libre Baskerville", serif;
 }
 
 .background {
-  position: relative;
   width: 100vw;
   height: 100vh;
+  position: relative;
   overflow: hidden;
 }
 
@@ -121,9 +120,9 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   padding: 0 2rem;
-  gap: 3.5rem;
+  gap: 10%;
 }
 
 .hero p {
