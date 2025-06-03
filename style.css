@@ -209,3 +209,15 @@ hr {
 .hidden {
   display: none;
 }
+
+.bckbtn {
+  background: none;
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  padding: 0;
+}
+
+.bckbtn img {
+  width: 1.5rem;
+}
