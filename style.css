@@ -14,22 +14,7 @@
   text-decoration: none;
 }
 
-body {
-  background-color: black;
-  color: white;
-  font-family: "Libre Baskerville", serif;
-}
-
-.background {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-}
-
-p {
-  font-style: italic;
-}
-
+/* BACKGROUND START */
 .glow {
   position: fixed;
   border-radius: 50%;
@@ -111,19 +96,60 @@ p {
   height: 150px;
   opacity: 0.3;
 }
+/* BACKGROUND END */
 
-.hero {
+body {
+  background-color: black;
+  color: white;
+  font-family: "Libre Baskerville", serif;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
-  padding: 0 2rem;
-  gap: 10%;
+  gap: 3.5rem;
 }
 
-.hero p {
+p {
+  font-style: italic;
+}
+
+.section-container {
+  position: relative;
+  width: 100%;
+}
+
+.section {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.section.active {
+  display: flex;
+}
+
+.section p {
   font-size: 1rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -132,35 +158,29 @@ button {
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   background-color: var(--b2);
+  cursor: pointer;
+  font-size: 0.8rem;
 }
 
-.fade-up {
+button img {
+  vertical-align: middle;
+  width: 1.5rem;
+}
+
+button:disabled {
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 0.6s ease-out forwards;
+  cursor: not-allowed;
 }
 
-.fade-up:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.fade-up:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.fade-up:nth-child(3) {
-  animation-delay: 0.5s;
-}
-.fade-up:nth-child(4) {
-  animation-delay: 0.7s;
+#backBtn {
+  position: absolute;
+  top: 2%;
+  left: 4%;
+  padding: 0;
+  background: none;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero .something {
+.section .something {
   display: flex;
   position: relative;
 }
@@ -195,22 +215,7 @@ hr {
   margin: 1.2rem auto; 
 }
 
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  padding: 0 2rem;
-  gap: 3%;
-  font-size: 0.9rem;
-}
-
-.hidden {
-  display: none;
-}
-
-.bckbtn {
+/* .bckbtn {
   background: none;
   position: absolute;
   top: 3%;
@@ -220,4 +225,4 @@ hr {
 
 .bckbtn img {
   width: 1.5rem;
-}
+} */
