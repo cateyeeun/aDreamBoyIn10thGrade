@@ -123,6 +123,60 @@ function autoSlide() {
   setTimeout(autoSlide, 4000);
 }
 
+// === POPUP PREVIEW ===
+const popup = document.getElementById("popup");
+const popupImage = document.getElementById("popupImage");
+let slideshowPaused = false;
+let autoSlideTimeout;
+
+function pauseAutoSlide() {
+  clearTimeout(autoSlideTimeout);
+  slideshowPaused = true;
+}
+
+function resumeAutoSlide() {
+  slideshowPaused = false;
+  autoSlide(); // Lanjutkan
+}
+
+// Gambar di slides (sudah kamu punya)
+slides.forEach((slide) => {
+  const img = slide.querySelector("img");
+  if (img) {
+    img.addEventListener("click", () => {
+      popupImage.src = img.src;
+      popup.classList.remove("hidden");
+      pauseAutoSlide(); // opsional
+    });
+  }
+});
+
+// Gambar di semua section
+sections.forEach((section) => {
+  const imgs = section.querySelectorAll("img");
+  imgs.forEach((img) => {
+    img.addEventListener("click", () => {
+      popupImage.src = img.src;
+      popup.classList.remove("hidden");
+      pauseAutoSlide(); // opsional
+    });
+  });
+});
+
+// Tutup popup jika diklik
+popup.addEventListener("click", () => {
+  popup.classList.add("hidden");
+  resumeAutoSlide(); // opsional
+});
+
+// Perbaiki autoSlide agar tidak terus jalan kalau sedang pause
+function autoSlide() {
+  if (!slideshowPaused) {
+    changeSlide(1);
+  }
+  autoSlideTimeout = setTimeout(autoSlide, 4000);
+}
+
 // Jalankan slideshow dari slide ke-3
 showSlide(slideIndex);
 setTimeout(autoSlide, 4000);
