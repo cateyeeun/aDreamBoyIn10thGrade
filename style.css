@@ -222,6 +222,9 @@ button:disabled {
   transform: rotate(10deg);
 }
 
+.something.main-content {
+  margin-top: 3.5rem;
+}
 .something.main-content h1 {
   font-size: 1.5rem;
 }
