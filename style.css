@@ -158,7 +158,7 @@ body {
 }
 
 .sec-main {
-  gap: 2rem;
+  gap: 3.5rem;
 }
 
 .navigation {
@@ -268,7 +268,7 @@ hr {
   position: relative;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  width: 8rem;
+  width: 10rem;
 }
 
 .slideshow-container .slides {
@@ -313,13 +313,12 @@ hr {
   display: inline-block;
   transition: background-color 0.3s;
   cursor: pointer;
-  background-color: var(--b4);
-  box-shadow: 0 0 5px var(--b2);
+  background-color: var(--b3);
+  box-shadow: 0 0 5px var(--b1);
 }
 
 .dot.active {
-  background-color: var(--b2);
-  box-shadow: 0 0 5px var(--b1);
+  background-color: var(--b1);
 }
 
 .slideshow-container .prev,
@@ -338,11 +337,11 @@ hr {
 }
 
 .slideshow-container .prev {
-  left: 8px;
+  left: 5px;
 }
 
 .slideshow-container .next {
-  right: 8px;
+  right: 5px;
 }
 
 .slideshow-container .prev:hover,
