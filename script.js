@@ -180,3 +180,23 @@ function autoSlide() {
 // Jalankan slideshow dari slide ke-3
 showSlide(slideIndex);
 setTimeout(autoSlide, 4000);
+
+// === BACKGROUND MUSIC ===
+const bgm = document.getElementById("bgm");
+
+// coba autoplay muted
+bgm.muted = true;
+bgm.play().then(() => {
+  console.log("Autoplay berhasil (muted).");
+}).catch(() => {
+  console.log("Autoplay diblokir, tunggu interaksi user.");
+});
+
+// setelah user klik di mana saja, unmute
+document.addEventListener("click", () => {
+  if (bgm.muted) {
+    bgm.muted = false;
+    bgm.play();
+  }
+}, { once: true });
+
