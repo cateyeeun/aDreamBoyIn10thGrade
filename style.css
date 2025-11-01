@@ -175,6 +175,7 @@ button {
   background-color: var(--b2);
   cursor: pointer;
   font-size: 0.8rem;
+  margin-bottom: 2rem;
 }
 
 button img {
@@ -193,6 +194,17 @@ button:disabled {
   left: 4%;
   padding: 0;
   background: none;
+  z-index: 999;
+}
+
+#menuBtn {
+  z-index: 999;
+  position: fixed;
+  top: 2%;
+  right: 4%;
+  padding: 0;
+  background: none;
+  color: var(--b1);
 }
 
 .section .something {
@@ -311,7 +323,7 @@ hr {
 .dot {
   height: 3px;
   width: 3px;
-  margin: 0 7px;
+  margin: 0 3px;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.3s;

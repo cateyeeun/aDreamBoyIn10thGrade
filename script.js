@@ -1,6 +1,7 @@
 const sections = document.querySelectorAll(".section");
 const nextBtn = document.getElementById("nextBtn");
 const backBtn = document.getElementById("backBtn");
+const menuBtn = document.getElementById("menuBtn");
 
 const nextTexts = [
   "yes!",
@@ -27,6 +28,7 @@ function updateSections() {
 
   // Disable back button on first section
   backBtn.disabled = current === 0;
+  menuBtn.disabled = current === 0;
 
   // Optional: Hide next button on last section
   nextBtn.style.display =
@@ -71,7 +73,7 @@ function applyFadeUp(section) {
     el.classList.remove("fade-up");
     void el.offsetWidth; // trigger reflow agar animasi bisa diulang
     el.classList.add("fade-up");
-    el.style.animationDelay = `${i * 0.3}s`; // delay bertahap
+    el.style.animationDelay = `${i * 0.2}s`; // delay bertahap
   });
 }
 
@@ -81,7 +83,7 @@ const slides = document.querySelectorAll(".slide");
 const dotsContainer = document.querySelector(".dots");
 
 // Buat navigasi dots hanya untuk slide ke-3 hingga ke-16
-for (let i = 2; i <= 15; i++) {
+for (let i = 2; i <= 28; i++) {
   const dot = document.createElement("span");
   dot.classList.add("dot");
   dot.setAttribute("onclick", `currentSlide(${i})`);
@@ -91,8 +93,8 @@ for (let i = 2; i <= 15; i++) {
 const dots = document.querySelectorAll(".dot");
 
 function showSlide(n) {
-  if (n > 15) slideIndex = 2; // Jika sudah sampai slide ke-13, kembali ke slide ke-3
-  if (n < 2) slideIndex = 15; // Jika mundur sebelum slide ke-3, kembali ke slide ke-16
+  if (n > 28) slideIndex = 2; // Jika sudah sampai slide ke-13, kembali ke slide ke-3
+  if (n < 2) slideIndex = 28; // Jika mundur sebelum slide ke-3, kembali ke slide ke-16
 
   document.querySelector(".slides").style.transform = `translateX(-${
     slideIndex * 100
